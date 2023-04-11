@@ -1,0 +1,24 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Students {
+  id Int @id @default(autoincrement())
+  name String
+  surname String
+  group String
+  birthday DateTime
+  adress String
+  phone String
+  status String
+}
+// npx prisma init - create new prisma schema
+// npx prisma db push - push to database &&  upload
